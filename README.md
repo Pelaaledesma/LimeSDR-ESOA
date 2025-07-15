@@ -4,7 +4,7 @@
 
 **Curso de Comunicantes – Escuela de Oficiales de la Armada Argentina**
 
-Este repositorio contiene un programa en Python desarrollado para ser utilizado junto a la plataforma **LimeSDR**, como parte de los contenidos del curso de Comunicantes. El objetivo es introducir a los cursantes en el uso práctico de radio definida por software (SDR) mediante la captura, transmisión y análisis de señales.
+Este repositorio contiene un programa en Python desarrollado para ser utilizado junto a la plataforma **LimeSDR**, como parte de los contenidos del curso de Comunicaciones. El objetivo es introducir a los cursantes en el uso práctico de radio definida por software (SDR) mediante la captura, transmisión y análisis de señales.
 
 ---
 
