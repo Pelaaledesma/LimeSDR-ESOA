@@ -1,0 +1,1685 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: top_block_fm_completo
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 532.0]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: AUD_GAIN
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Audio gain
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '0.1'
+    stop: '5'
+    value: '1'
+    widget: dial
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 724.0]
+    rotation: 0
+    state: true
+- name: Fc_1F
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [256, 652.0]
+    rotation: 0
+    state: true
+- name: RX_FREQ_COARSE
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '40000000'
+    step: '100000'
+    stop: '3000000000'
+    value: '916000000'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [680, 724.0]
+    rotation: 0
+    state: true
+- name: RX_FREQ_FINE
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '-100000'
+    step: '1'
+    stop: '100000'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [824, 724.0]
+    rotation: 0
+    state: true
+- name: TX_FREQ_COARSE
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '140000000'
+    step: '100000'
+    stop: '3000000000'
+    value: '916000000'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [160, 724.0]
+    rotation: 0
+    state: true
+- name: TX_FREQ_FINE
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '-100000'
+    step: '1'
+    stop: '100000'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [312, 724.0]
+    rotation: 0
+    state: true
+- name: audio_vol
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Volumen
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '0.05'
+    stop: '4'
+    value: '0'
+    widget: dial
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [944, 724.0]
+    rotation: 0
+    state: true
+- name: func_probe_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [344, 652.0]
+    rotation: 0
+    state: true
+- name: function_probe_SINAD
+  id: variable_function_probe
+  parameters:
+    block_id: epy_block_sinad
+    comment: ''
+    function_args: ''
+    function_name: get_SINAD
+    poll_rate: func_probe_rate
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [0, 868.0]
+    rotation: 0
+    state: true
+- name: function_probe_SINAD_ND
+  id: variable_function_probe
+  parameters:
+    block_id: epy_block_sinad
+    comment: ''
+    function_args: ''
+    function_name: get_ND
+    poll_rate: func_probe_rate
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 868.0]
+    rotation: 0
+    state: true
+- name: function_probe_SINAD_SND
+  id: variable_function_probe
+  parameters:
+    block_id: epy_block_sinad
+    comment: ''
+    function_args: ''
+    function_name: get_SND
+    poll_rate: func_probe_rate
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 868.0]
+    rotation: 0
+    state: true
+- name: function_probe_SNR
+  id: variable_function_probe
+  parameters:
+    block_id: epy_block_SNR
+    comment: ''
+    function_args: ''
+    function_name: get_SNR
+    poll_rate: func_probe_rate
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [552, 868.0]
+    rotation: 0
+    state: true
+- name: function_probe_SNR_ND
+  id: variable_function_probe
+  parameters:
+    block_id: epy_block_SNR
+    comment: ''
+    function_args: ''
+    function_name: get_ND
+    poll_rate: func_probe_rate
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [904, 868.0]
+    rotation: 0
+    state: true
+- name: function_probe_SNR_S
+  id: variable_function_probe
+  parameters:
+    block_id: epy_block_SNR
+    comment: ''
+    function_args: ''
+    function_name: get_S
+    poll_rate: func_probe_rate
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [728, 868.0]
+    rotation: 0
+    state: true
+- name: label_SINAD
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ''
+    label: SINAD
+    type: raw
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [0, 964.0]
+    rotation: 0
+    state: true
+- name: label_SINAD_ND
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ''
+    label: SINAD (Noise + Distortion)
+    type: raw
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 964.0]
+    rotation: 0
+    state: true
+- name: label_SINAD_SND
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ''
+    label: SINAD (Signal + Noise + Distortion)
+    type: raw
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [112, 964.0]
+    rotation: 0
+    state: true
+- name: label_SNR
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ''
+    label: SNR
+    type: raw
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 964.0]
+    rotation: 0
+    state: true
+- name: label_SNR_ND
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ''
+    label: SNR (Noise + Distortion)
+    type: raw
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [688, 964.0]
+    rotation: 0
+    state: true
+- name: label_SNR_S
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ''
+    label: SNR (Signal)
+    type: raw
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 964.0]
+    rotation: 0
+    state: true
+- name: label_pot_RX
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ''
+    label: Gain [dB]
+    type: raw
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1008, 964.0]
+    rotation: 0
+    state: true
+- name: label_pot_TX
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ''
+    label: Gain [dB]
+    type: raw
+    value: '45'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [880, 964.0]
+    rotation: 0
+    state: true
+- name: movil_avg
+  id: variable
+  parameters:
+    comment: ''
+    value: '50'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 652.0]
+    rotation: 0
+    state: true
+- name: pb_push_to_talk
+  id: variable_qtgui_push_button
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: PUSH TO TALK
+    pressed: '1'
+    released: '0'
+    type: raw
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1072, 852.0]
+    rotation: 0
+    state: true
+- name: q_filter
+  id: variable
+  parameters:
+    comment: ''
+    value: '40'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [480, 652.0]
+    rotation: 0
+    state: true
+- name: rb_control
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: OPTIONS
+    label0: Full Duplex
+    label1: Push to Talk
+    label2: Test
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '3'
+    option0: '101'
+    option1: '102'
+    option2: '103'
+    option3: '3'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QHBoxLayout
+    type: raw
+    value: '101'
+    widget: radio_buttons
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1216, 772.0]
+    rotation: 0
+    state: true
+- name: rx_gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '60'
+    value: '0'
+    widget: dial
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 724.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 652.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate_mult
+  id: variable
+  parameters:
+    comment: ''
+    value: '480000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [120, 652.0]
+    rotation: 0
+    state: true
+- name: tx_gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '73'
+    value: '45'
+    widget: dial
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 724.0]
+    rotation: 0
+    state: true
+- name: variable_qtgui_label_3
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: ''
+    label: ''
+    type: int
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [648, 656.0]
+    rotation: 0
+    state: true
+- name: analog_fm_demod_cf_0
+  id: analog_fm_demod_cf
+  parameters:
+    affinity: ''
+    alias: ''
+    audio_decim: '10'
+    audio_pass: '3000'
+    audio_stop: '4000'
+    chan_rate: samp_rate_mult
+    comment: ''
+    deviation: '5000'
+    gain: '1.0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tau: 75e-6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [408, 132.0]
+    rotation: 0
+    state: true
+- name: analog_fm_preemph_0
+  id: analog_fm_preemph
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    fh: '-1.0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    tau: 75e-6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [800, 4.0]
+    rotation: 0
+    state: true
+- name: analog_frequency_modulator_fc_0
+  id: analog_frequency_modulator_fc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    sensitivity: '0.6545'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1016, 4.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: '1000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: float
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: true
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 132.0]
+    rotation: 0
+    state: disabled
+- name: audio_sink_0
+  id: audio_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    device_name: ''
+    num_inputs: '1'
+    ok_to_block: 'True'
+    samp_rate: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 236.0]
+    rotation: 180
+    state: true
+- name: audio_source_0
+  id: audio_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    device_name: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_outputs: '1'
+    ok_to_block: 'True'
+    samp_rate: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 36.0]
+    rotation: 0
+    state: true
+- name: band_pass_filter_0
+  id: band_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    decim: '1'
+    gain: '1'
+    high_cutoff_freq: '5000'
+    interp: '1'
+    low_cutoff_freq: '200'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: movil_avg
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 4.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [248, 12.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_1
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [624, 180.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 12.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom scipy import signal\nfrom gnuradio import\
+      \ gr\n\nclass sinad_calculator(gr.sync_block):\n    \"\"\"\n    Bloque de GNU\
+      \ Radio personalizado para calcular la relaci\xF3n SINAD (Signal-to-Noise\n\
+      \    and Distortion).\n\n    Utiliza un filtro Notch IIR para atenuar la se\xF1\
+      al principal y medir la\n    potencia del ruido y la distorsi\xF3n. La potencia\
+      \ total se mide antes del filtro.\n    Se aplica un promedio m\xF3vil a las\
+      \ mediciones de potencia para mayor estabilidad.\n\n    Par\xE1metros:\n   \
+      \ - sample_rate: Frecuencia de muestreo de la se\xF1al de entrada (Hz).\n  \
+      \  - signal_freq: Frecuencia de la se\xF1al principal a medir (Hz).\n    - num_samples:\
+      \ N\xFAmero de muestras por bloque para el c\xE1lculo de potencia.\n    - q_param:\
+      \ Factor Q del filtro Notch IIR (determina la selectividad del filtro).\n  \
+      \  - mov_avg_len: Longitud del promedio m\xF3vil para las mediciones de potencia.\n\
+      \    \"\"\"\n    def __init__(self, sample_rate=48000.0, signal_freq=1000.0,\
+      \ num_samples=1024, q_param=40.0, mov_avg_len=50):\n        # Inicializa el\
+      \ bloque s\xEDncrono de GNU Radio.\n        # Una entrada (float), una salida\
+      \ (float para SINAD en dB).\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='SINAD',\n            in_sig=[np.float32], # Asumimos entrada\
+      \ float. Cambiar a np.complex64 si la se\xF1al es compleja.\n            out_sig=[np.float32]\
+      \ # Salida SINAD en dB\n        )\n\n        # Guarda los par\xE1metros del\
+      \ bloque\n        self.sample_rate = float(sample_rate)\n        self.signal_freq\
+      \ = float(signal_freq)\n        self.num_samples = int(num_samples)\n      \
+      \  self.q_param = float(q_param)\n        self.mov_avg_len = int(mov_avg_len)\n\
+      \n        # Asegura que la longitud del promedio m\xF3vil sea al menos 1\n \
+      \       if self.mov_avg_len < 1:\n            self.mov_avg_len = 1\n\n     \
+      \   # Historial para el promedio m\xF3vil de la potencia total (S+N+D)\n   \
+      \     self.power_total_history = np.zeros(self.mov_avg_len)\n        self.power_total_idx\
+      \ = 0\n\n        # Historial para el promedio m\xF3vil de la potencia de ruido\
+      \ y distorsi\xF3n (N+D)\n        self.power_nd_history = np.zeros(self.mov_avg_len)\n\
+      \        self.power_nd_idx = 0\n\n        # Dise\xF1a el filtro Notch IIR\n\
+      \        # El filtro Notch se usar\xE1 para eliminar la se\xF1al principal y\
+      \ as\xED medir N+D.\n        try:\n            self.b_notch, self.a_notch =\
+      \ signal.iirnotch(\n                self.signal_freq, self.q_param, self.sample_rate\n\
+      \            )\n        except ValueError as e:\n            # Manejo de errores\
+      \ si los par\xE1metros del filtro no son v\xE1lidos\n            print(f\"Error\
+      \ al dise\xF1ar el filtro Notch: {e}\")\n            # Establece coeficientes\
+      \ de paso directo para evitar errores en work()\n            self.b_notch =\
+      \ np.array([1.0])\n            self.a_notch = np.array([1.0])\n\n        # Estado\
+      \ del filtro Notch (para mantener la continuidad entre llamadas a work)\n  \
+      \      self.zi_notch = signal.lfilter_zi(self.b_notch, self.a_notch) * 0.0\n\
+      \n\n    def work(self, input_items, output_items):\n        # Obtiene el buffer\
+      \ de entrada y salida\n        in0 = input_items[0]\n        out0 = output_items[0]\n\
+      \n        # Asegura que tenemos suficientes muestras para procesar\n       \
+      \ if len(in0) < self.num_samples:\n            return 0 # No hay suficientes\
+      \ muestras para un c\xE1lculo completo\n\n        # Procesar en bloques de num_samples\n\
+      \        num_output_items = len(out0)\n        processed_samples = 0\n\n   \
+      \     for i in range(0, len(in0), self.num_samples):\n            current_block\
+      \ = in0[i : i + self.num_samples]\n\n            if len(current_block) < self.num_samples:\n\
+      \                break # El \xFAltimo bloque puede ser m\xE1s peque\xF1o, lo\
+      \ ignoramos por ahora\n\n            # 1. Calcular la potencia total (S+N+D)\
+      \ del bloque actual\n            # Para se\xF1ales reales: potencia = media(abs(se\xF1\
+      al)^2)\n            power_total_current = np.mean(np.abs(current_block)**2)\n\
+      \n            # Actualizar el historial del promedio m\xF3vil para la potencia\
+      \ total\n            self.power_total_history[self.power_total_idx] = power_total_current\n\
+      \            self.power_total_idx = (self.power_total_idx + 1) % self.mov_avg_len\n\
+      \            avg_power_total = np.mean(self.power_total_history)\n\n       \
+      \     # 2. Aplicar el filtro Notch IIR para obtener solo Ruido + Distorsi\xF3\
+      n (N+D)\n            # Usamos lfilter y mantenemos el estado (zi) para continuidad\n\
+      \            filtered_nd_signal, self.zi_notch = signal.lfilter(\n         \
+      \       self.b_notch, self.a_notch, current_block, zi=self.zi_notch\n      \
+      \      )\n\n            # 3. Calcular la potencia de Ruido + Distorsi\xF3n (N+D)\n\
+      \            power_nd_current = np.mean(np.abs(filtered_nd_signal)**2)\n\n \
+      \           # Actualizar el historial del promedio m\xF3vil para la potencia\
+      \ N+D\n            self.power_nd_history[self.power_nd_idx] = power_nd_current\n\
+      \            self.power_nd_idx = (self.power_nd_idx + 1) % self.mov_avg_len\n\
+      \            avg_power_nd = np.mean(self.power_nd_history)\n\n            #\
+      \ 4. Calcular SINAD\n            sinad_val_linear = 0.0\n            if avg_power_nd\
+      \ > 1e-12: # Evitar divisi\xF3n por cero o valores muy peque\xF1os\n       \
+      \         sinad_val_linear = avg_power_total / avg_power_nd\n            else:\n\
+      \                # Si N+D es muy bajo, SINAD es muy alto (idealmente infinito)\n\
+      \                sinad_val_linear = 1e12 # Un valor grande para representar\
+      \ \"infinito\"\n\n            sinad_db = 10 * np.log10(sinad_val_linear)\n\n\
+      \            # Asigna el valor de SINAD a la salida\n            # Cada bloque\
+      \ de num_samples de entrada produce 1 valor de SINAD\n            if processed_samples\
+      \ < num_output_items:\n                out0[processed_samples] = sinad_db\n\
+      \                processed_samples += 1\n            else:\n               \
+      \ break # Ya hemos llenado el buffer de salida\n\n        return processed_samples\
+      \ # Retorna el n\xFAmero de muestras de salida producidas\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    mov_avg_len: '50'
+    num_samples: '1000'
+    q_param: '40'
+    sample_rate: samp_rate
+    signal_freq: ''
+  states:
+    _io_cache: "('SINAD', 'sinad_calculator', [('sample_rate', '48000.0'), ('signal_freq',\
+      \ '1000.0'), ('num_samples', '1024'), ('q_param', '40.0'), ('mov_avg_len', '50')],\
+      \ [('0', 'float', 1)], [('0', 'float', 1)], '\\n    Bloque de GNU Radio personalizado\
+      \ para calcular la relaci\xF3n SINAD (Signal-to-Noise\\n    and Distortion).\\\
+      n\\n    Utiliza un filtro Notch IIR para atenuar la se\xF1al principal y medir\
+      \ la\\n    potencia del ruido y la distorsi\xF3n. La potencia total se mide\
+      \ antes del filtro.\\n    Se aplica un promedio m\xF3vil a las mediciones de\
+      \ potencia para mayor estabilidad.\\n\\n    Par\xE1metros:\\n    - sample_rate:\
+      \ Frecuencia de muestreo de la se\xF1al de entrada (Hz).\\n    - signal_freq:\
+      \ Frecuencia de la se\xF1al principal a medir (Hz).\\n    - num_samples: N\xFA\
+      mero de muestras por bloque para el c\xE1lculo de potencia.\\n    - q_param:\
+      \ Factor Q del filtro Notch IIR (determina la selectividad del filtro).\\n \
+      \   - mov_avg_len: Longitud del promedio m\xF3vil para las mediciones de potencia.\\\
+      n    ', ['mov_avg_len', 'num_samples', 'q_param', 'sample_rate', 'signal_freq'])"
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 316.0]
+    rotation: 0
+    state: true
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom scipy import signal\nfrom gnuradio import\
+      \ gr\n\nclass snr_calculator(gr.sync_block):\n    \"\"\"\n    Bloque de GNU\
+      \ Radio personalizado para calcular la relaci\xF3n SNR (Signal-to-Noise Ratio).\n\
+      \n    Utiliza un filtro Pasa-Banda para aislar la se\xF1al (S) y un filtro Notch\
+      \ IIR\n    para aislar el ruido (N). Se aplica un promedio m\xF3vil a las mediciones\
+      \ de potencia.\n\n    Par\xE1metros:\n    - sample_rate: Frecuencia de muestreo\
+      \ de la se\xF1al de entrada (Hz).\n    - signal_freq: Frecuencia de la se\xF1\
+      al principal a medir (Hz).\n    - num_samples: N\xFAmero de muestras por bloque\
+      \ para el c\xE1lculo de potencia.\n    - q_notch: Factor Q del filtro Notch\
+      \ IIR (para aislar N).\n    - q_bp: Factor Q del filtro Pasa-Banda IIR (para\
+      \ aislar S).\n    - mov_avg_len: Longitud del promedio m\xF3vil para las mediciones\
+      \ de potencia.\n    \"\"\"\n    def __init__(self, sample_rate=48000.0, signal_freq=1000.0,\
+      \ num_samples=1024, q_notch=40.0, q_bp=40.0, mov_avg_len=50):\n        # Inicializa\
+      \ el bloque s\xEDncrono de GNU Radio.\n        # Una entrada (float), una salida\
+      \ (float para SNR en dB).\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='SNR',\n            in_sig=[np.float32], # Asumimos entrada\
+      \ float. Cambiar a np.complex64 si la se\xF1al es compleja.\n            out_sig=[np.float32]\
+      \ # Salida SNR en dB\n        )\n\n        # Guarda los par\xE1metros del bloque\n\
+      \        self.sample_rate = float(sample_rate)\n        self.signal_freq = float(signal_freq)\n\
+      \        self.num_samples = int(num_samples)\n        self.q_notch = float(q_notch)\n\
+      \        self.q_bp = float(q_bp)\n        self.mov_avg_len = int(mov_avg_len)\n\
+      \n        # Asegura que la longitud del promedio m\xF3vil sea al menos 1\n \
+      \       if self.mov_avg_len < 1:\n            self.mov_avg_len = 1\n\n     \
+      \   # Historial para el promedio m\xF3vil de la potencia de la se\xF1al (S)\n\
+      \        self.power_s_history = np.zeros(self.mov_avg_len)\n        self.power_s_idx\
+      \ = 0\n\n        # Historial para el promedio m\xF3vil de la potencia del ruido\
+      \ (N)\n        self.power_n_history = np.zeros(self.mov_avg_len)\n        self.power_n_idx\
+      \ = 0\n\n        # Dise\xF1a el filtro Notch IIR (para aislar el ruido)\n  \
+      \      try:\n            self.b_notch, self.a_notch = signal.iirnotch(\n   \
+      \             self.signal_freq, self.q_notch, self.sample_rate\n           \
+      \ )\n        except ValueError as e:\n            print(f\"Error al dise\xF1\
+      ar el filtro Notch para SNR: {e}\")\n            self.b_notch = np.array([1.0])\n\
+      \            self.a_notch = np.array([1.0])\n\n        # Dise\xF1a el filtro\
+      \ Pasa-Banda IIR (para aislar la se\xF1al)\n        # Se crea una banda de paso\
+      \ estrecha alrededor de signal_freq\n        nyquist = 0.5 * self.sample_rate\n\
+      \        lowcut = (self.signal_freq - (self.signal_freq / (2 * self.q_bp)))\
+      \ / nyquist\n        highcut = (self.signal_freq + (self.signal_freq / (2 *\
+      \ self.q_bp))) / nyquist\n        \n        # Asegurarse de que las frecuencias\
+      \ de corte sean v\xE1lidas\n        if lowcut < 0: lowcut = 0.01 # Evitar frecuencia\
+      \ negativa\n        if highcut >= 1: highcut = 0.99 # Evitar o exceder la frecuencia\
+      \ de Nyquist\n\n        try:\n            # 'bandpass' para un filtro pasa-banda\n\
+      \            self.b_bp, self.a_bp = signal.iirfilter(\n                N=4,\
+      \  # Orden del filtro, puedes ajustarlo\n                Wn=[lowcut, highcut],\n\
+      \                btype='bandpass',\n                ftype='butter', # Tipo de\
+      \ filtro, Butterworth es com\xFAn\n                fs=self.sample_rate\n   \
+      \         )\n        except ValueError as e:\n            print(f\"Error al\
+      \ dise\xF1ar el filtro Pasa-Banda para SNR: {e}\")\n            self.b_bp =\
+      \ np.array([1.0])\n            self.a_bp = np.array([1.0])\n\n        # Estados\
+      \ de los filtros (para mantener la continuidad entre llamadas a work)\n    \
+      \    self.zi_notch = signal.lfilter_zi(self.b_notch, self.a_notch) * 0.0\n \
+      \       self.zi_bp = signal.lfilter_zi(self.b_bp, self.a_bp) * 0.0\n\n\n   \
+      \ def work(self, input_items, output_items):\n        # Obtiene el buffer de\
+      \ entrada y salida\n        in0 = input_items[0]\n        out0 = output_items[0]\n\
+      \n        # Asegura que tenemos suficientes muestras para procesar\n       \
+      \ if len(in0) < self.num_samples:\n            return 0 # No hay suficientes\
+      \ muestras para un c\xE1lculo completo\n\n        # Procesar en bloques de num_samples\n\
+      \        num_output_items = len(out0)\n        processed_samples = 0\n\n   \
+      \     for i in range(0, len(in0), self.num_samples):\n            current_block\
+      \ = in0[i : i + self.num_samples]\n\n            if len(current_block) < self.num_samples:\n\
+      \                break # El \xFAltimo bloque puede ser m\xE1s peque\xF1o, lo\
+      \ ignoramos por ahora\n\n            # 1. A\xEDsla la se\xF1al (S) usando el\
+      \ filtro Pasa-Banda\n            filtered_s_signal, self.zi_bp = signal.lfilter(\n\
+      \                self.b_bp, self.a_bp, current_block, zi=self.zi_bp\n      \
+      \      )\n            power_s_current = np.mean(np.abs(filtered_s_signal)**2)\n\
+      \n            # Actualizar el historial del promedio m\xF3vil para la potencia\
+      \ de la se\xF1al\n            self.power_s_history[self.power_s_idx] = power_s_current\n\
+      \            self.power_s_idx = (self.power_s_idx + 1) % self.mov_avg_len\n\
+      \            avg_power_s = np.mean(self.power_s_history)\n\n            # 2.\
+      \ A\xEDsla el ruido (N) usando el filtro Notch (elimina la se\xF1al principal)\n\
+      \            filtered_n_signal, self.zi_notch = signal.lfilter(\n          \
+      \      self.b_notch, self.a_notch, current_block, zi=self.zi_notch\n       \
+      \     )\n            power_n_current = np.mean(np.abs(filtered_n_signal)**2)\n\
+      \n            # Actualizar el historial del promedio m\xF3vil para la potencia\
+      \ del ruido\n            self.power_n_history[self.power_n_idx] = power_n_current\n\
+      \            self.power_n_idx = (self.power_n_idx + 1) % self.mov_avg_len\n\
+      \            avg_power_n = np.mean(self.power_n_history)\n\n            # 3.\
+      \ Calcular SNR\n            snr_val_linear = 0.0\n            if avg_power_n\
+      \ > 1e-12: # Evitar divisi\xF3n por cero o valores muy peque\xF1os\n       \
+      \         snr_val_linear = avg_power_s / avg_power_n\n            else:\n  \
+      \              # Si el ruido es muy bajo, SNR es muy alto (idealmente infinito)\n\
+      \                snr_val_linear = 1e12 # Un valor grande para representar \"\
+      infinito\"\n\n            snr_db = 10 * np.log10(snr_val_linear)\n\n       \
+      \     # Asigna el valor de SNR a la salida\n            if processed_samples\
+      \ < num_output_items:\n                out0[processed_samples] = snr_db\n  \
+      \              processed_samples += 1\n            else:\n                break\
+      \ # Ya hemos llenado el buffer de salida\n\n        return processed_samples\
+      \ # Retorna el n\xFAmero de muestras de salida producidas\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    mov_avg_len: movil_avg
+    num_samples: '1000'
+    q_bp: q_filter
+    q_notch: q_filter
+    sample_rate: samp_rate
+    signal_freq: ''
+  states:
+    _io_cache: "('SNR', 'snr_calculator', [('sample_rate', '48000.0'), ('signal_freq',\
+      \ '1000.0'), ('num_samples', '1024'), ('q_notch', '40.0'), ('q_bp', '40.0'),\
+      \ ('mov_avg_len', '50')], [('0', 'float', 1)], [('0', 'float', 1)], '\\n   \
+      \ Bloque de GNU Radio personalizado para calcular la relaci\xF3n SNR (Signal-to-Noise\
+      \ Ratio).\\n\\n    Utiliza un filtro Pasa-Banda para aislar la se\xF1al (S)\
+      \ y un filtro Notch IIR\\n    para aislar el ruido (N). Se aplica un promedio\
+      \ m\xF3vil a las mediciones de potencia.\\n\\n    Par\xE1metros:\\n    - sample_rate:\
+      \ Frecuencia de muestreo de la se\xF1al de entrada (Hz).\\n    - signal_freq:\
+      \ Frecuencia de la se\xF1al principal a medir (Hz).\\n    - num_samples: N\xFA\
+      mero de muestras por bloque para el c\xE1lculo de potencia.\\n    - q_notch:\
+      \ Factor Q del filtro Notch IIR (para aislar N).\\n    - q_bp: Factor Q del\
+      \ filtro Pasa-Banda IIR (para aislar S).\\n    - mov_avg_len: Longitud del promedio\
+      \ m\xF3vil para las mediciones de potencia.\\n    ', ['mov_avg_len', 'num_samples',\
+      \ 'q_bp', 'q_notch', 'sample_rate', 'signal_freq'])"
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 444.0]
+    rotation: 0
+    state: true
+- name: limesdr_sink_0
+  id: limesdr_sink
+  parameters:
+    affinity: ''
+    alias: limesdr_sink_0
+    allow_tcxo_dac: '0'
+    analog_bandw_ch0: 5e6
+    analog_bandw_ch1: 5e6
+    calibr_bandw_ch0: 5e6
+    calibr_bandw_ch1: 5e6
+    channel_mode: '0'
+    comment: VERIFICAR NUMERO DE PLACA DE LIME SDR
+    dacVal: '125'
+    digital_bandw_ch0: samp_rate_mult/2
+    digital_bandw_ch1: '0'
+    filename: ''
+    gain_dB_ch0: tx_gain
+    gain_dB_ch1: '30'
+    length_tag_name: ''
+    nco_freq_ch0: '0'
+    nco_freq_ch1: '0'
+    oversample: '0'
+    pa_path_ch0: '255'
+    pa_path_ch1: '1'
+    rf_freq: TX_FREQ_COARSE+TX_FREQ_FINE
+    samp_rate: samp_rate_mult
+    serial: 0009061c01502103
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1184, 76.0]
+    rotation: 180
+    state: true
+- name: limesdr_source_0
+  id: limesdr_source
+  parameters:
+    affinity: ''
+    alias: limesdr_source_0
+    allow_tcxo_dac: '0'
+    analog_bandw_ch0: 5e6
+    analog_bandw_ch1: 5e6
+    calibr_bandw_ch0: 5e6
+    calibr_bandw_ch1: 5e6
+    channel_mode: '0'
+    comment: VERIFICAR NUMERO DE PLACA
+    dacVal: '125'
+    digital_bandw_ch0: samp_rate_mult/2
+    digital_bandw_ch1: '0'
+    filename: ''
+    gain_dB_ch0: rx_gain
+    gain_dB_ch1: '30'
+    lna_path_ch0: '255'
+    lna_path_ch1: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nco_freq_ch0: '0'
+    nco_freq_ch1: '0'
+    oversample: '0'
+    rf_freq: RX_FREQ_COARSE+RX_FREQ_FINE
+    samp_rate: samp_rate_mult
+    serial: 0009061C01502103
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 284.0]
+    rotation: 0
+    state: true
+- name: low_pass_filter_0
+  id: low_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: '10000'
+    decim: '1'
+    gain: '0.2'
+    interp: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_ccf
+    width: movil_avg
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1440, -4.0]
+    rotation: 0
+    state: true
+- name: low_pass_filter_1
+  id: low_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: '10000'
+    decim: '1'
+    gain: '1'
+    interp: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate_mult
+    type: fir_filter_ccf
+    width: '1000'
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [232, 260.0]
+    rotation: 0
+    state: true
+- name: qtgui_freq_sink_x_0
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '1.0'
+    axislabels: 'True'
+    bw: '48000'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: '0'
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label: Relative Gain
+    label1: ''
+    label10: ''''''
+    label2: ''''''
+    label3: ''''''
+    label4: ''''''
+    label5: ''''''
+    label6: ''''''
+    label7: ''''''
+    label8: ''''''
+    label9: ''''''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    norm_window: 'False'
+    showports: 'False'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: float
+    units: dB
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: window.WIN_BLACKMAN_hARRIS
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [392, 348.0]
+    rotation: 180
+    state: true
+- name: qtgui_freq_sink_x_1
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '1.0'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: '0'
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label: Relative Gain
+    label1: ''
+    label10: ''''''
+    label2: ''''''
+    label3: ''''''
+    label4: ''''''
+    label5: ''''''
+    label6: ''''''
+    label7: ''''''
+    label8: ''''''
+    label9: ''''''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    norm_window: 'False'
+    showports: 'False'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: float
+    units: dB
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: window.WIN_BLACKMAN_hARRIS
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 292.0]
+    rotation: 0
+    state: true
+- name: qtgui_freq_sink_x_2
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '1.0'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: '0'
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label: Relative Gain
+    label1: ''
+    label10: ''''''
+    label2: ''''''
+    label3: ''''''
+    label4: ''''''
+    label5: ''''''
+    label6: ''''''
+    label7: ''''''
+    label8: ''''''
+    label9: ''''''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    norm_window: 'False'
+    showports: 'False'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: float
+    units: dB
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: window.WIN_BLACKMAN_hARRIS
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 468.0]
+    rotation: 0
+    state: true
+- name: qtgui_time_sink_x_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [384, 452.0]
+    rotation: 180
+    state: true
+- name: qtgui_time_sink_x_1
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 380.0]
+    rotation: 0
+    state: true
+- name: qtgui_time_sink_x_2
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 548.0]
+    rotation: 0
+    state: true
+- name: rational_resampler_xxx_0
+  id: rational_resampler_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '1'
+    fbw: '0'
+    interp: '10'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    taps: '[]'
+    type: ccc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1440, 156.0]
+    rotation: 180
+    state: true
+
+connections:
+- [analog_fm_demod_cf_0, '0', blocks_multiply_const_vxx_1, '0']
+- [analog_fm_demod_cf_0, '0', epy_block_0, '0']
+- [analog_fm_demod_cf_0, '0', epy_block_1, '0']
+- [analog_fm_demod_cf_0, '0', qtgui_freq_sink_x_0, '0']
+- [analog_fm_demod_cf_0, '0', qtgui_time_sink_x_0, '0']
+- [analog_fm_preemph_0, '0', analog_frequency_modulator_fc_0, '0']
+- [analog_frequency_modulator_fc_0, '0', low_pass_filter_0, '0']
+- [audio_source_0, '0', blocks_multiply_const_vxx_0, '0']
+- [band_pass_filter_0, '0', analog_fm_preemph_0, '0']
+- [blocks_multiply_const_vxx_0, '0', blocks_throttle_0, '0']
+- [blocks_multiply_const_vxx_1, '0', audio_sink_0, '0']
+- [blocks_throttle_0, '0', band_pass_filter_0, '0']
+- [epy_block_0, '0', qtgui_freq_sink_x_1, '0']
+- [epy_block_0, '0', qtgui_time_sink_x_1, '0']
+- [epy_block_1, '0', qtgui_freq_sink_x_2, '0']
+- [epy_block_1, '0', qtgui_time_sink_x_2, '0']
+- [limesdr_source_0, '0', low_pass_filter_1, '0']
+- [low_pass_filter_0, '0', rational_resampler_xxx_0, '0']
+- [low_pass_filter_1, '0', analog_fm_demod_cf_0, '0']
+- [rational_resampler_xxx_0, '0', limesdr_sink_0, '0']
+
+metadata:
+  file_format: 1
